@@ -1,0 +1,46 @@
+<html ng-app="newApp">
+	<head>
+		<script src="js/angular.min.js"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<div class="container">
+	<title>This is my first page</title>
+	</head>
+<body>
+	<h1>This is our first Table</h1>
+		<div ng-controller="myCtrl">
+			<table class="table">
+				<thead>
+					<th>Name</th>
+					<th>E-mail</th>
+					<th>Teliphone</th>
+					<th>Action</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input type='text' class= "form-control" ng-model='contact.name'>
+						</td>
+						<td><input type='email' class= "form-control" ng-model='contact.email'>
+						</td>
+						<td><input type='text' class= "form-control" ng-model='contact.tel'>
+						</td>
+						<td><input type='button' value="Submit" class= "btn btn-primary" ng-click='addcontact()'>
+						</td>
+					</tr>
+					<tr ng-repeat ="contact in contactlist">
+						<td>{{contact.name}}</td>
+						<td>{{contact.email}}</td>
+						<td>{{contact.tel}}</td>
+					</tr>
+				</tbody>
+
+			</table>
+			<p>my name is {{name}}</p>
+		</div>
+	<div>
+	<script src="controlers/controller.js"></script>
+</body>
+</html>
